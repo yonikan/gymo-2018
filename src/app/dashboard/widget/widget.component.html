@@ -1,0 +1,97 @@
+<mat-card>
+    <div class="is-loading" *ngIf="isLoading">
+        <mat-spinner color="primary"></mat-spinner>
+    </div>
+
+    <div class="" *ngIf="!isLoading">
+        <mat-card-header #widgetHeader ng-class="'selected': true">
+            <span class="">
+                <mat-card-title>{{ widgetName }}</mat-card-title>
+                <span class="badge">3</span>                                
+            </span>
+            
+            <span class="widgets-actions" >
+                <button mat-icon-button (click)="toggleListView()">
+                    <mat-icon *ngIf="!isListViewMode" matTooltip="Switch To List View">view_list</mat-icon>    
+                    <mat-icon *ngIf="isListViewMode" matTooltip="Switch To Dounats Chart">pie_chart</mat-icon>                                                
+                </button> 
+
+                <button mat-icon-button (click)="directToInvestigation(widgetData.id)">
+                    
+                    <!-- test another data aproch other than router sendind data -->
+                    <!-- <a [routerLink]="['/users', username]">{{ username }} Profile</a> -->
+                        
+                    <mat-icon matTooltip="Investigation Mode">call_made</mat-icon>                                                  
+                </button> 
+
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                     <mat-icon>more_vert</mat-icon>
+                </button>
+
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="addToFavorites()">
+                        <mat-icon>star_rate</mat-icon>
+                        <span>Add to Favorites</span>
+                    </button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item (click)="editWidget()">
+                        <mat-icon>mode_edit</mat-icon>
+                        <span>Edit Widget</span>
+                    </button>
+                    <button mat-menu-item (click)="deleteWidget()">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Widget</span>
+                    </button>
+                </mat-menu>
+            </span>
+        </mat-card-header> 
+
+        <mat-card-content>
+            <div *ngIf="!isListViewMode" [ngSwitch]="widgetType">
+                <div *ngSwitchCase="'doughnutChart'">
+                    <canvas baseChart
+                            width="530" height="300"
+                            [options]="doughnutChartOptions"
+                            [data]="doughnutChartData"
+                            [labels]="doughnutChartLabels"
+                            [chartType]="doughnutChartType"
+                            [colors]="doughnutColors">
+                    </canvas>
+                </div>
+                <div *ngSwitchCase="'lineChart'">
+                    <canvas baseChart
+                            width="530" height="300"
+                            [datasets]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [colors]="lineChartColors"
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType">
+                    </canvas>
+                </div>
+            </div>
+
+            <div *ngIf="isListViewMode" [ngClass]="animateOnRouteEnter">
+                <div style="display: block">
+                        <table>
+                                <tr *ngFor="let row of tableData">
+                                    <td><mat-checkbox color="primary"></mat-checkbox></td>
+                                    <!-- <td>{{ row.position }}</td> -->
+                                    <td>{{ row.name }}</td>
+                                    <td>
+                                        <mat-progress-bar
+                                            [color]="color"
+                                            [mode]="mode"
+                                            [value]="value"
+                                            [bufferValue]="bufferValue">
+                                        </mat-progress-bar>
+                                    </td>
+                                    <td>{{ row.weight }}</td>
+                                </tr>
+                        </table>
+                </div>
+            </div>
+        </mat-card-content>
+    </div> 
+
+</mat-card>

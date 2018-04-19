@@ -1,0 +1,35 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+    // width: 1200px;
+    // margin: 0 auto;
+    // border: 1px solid #e4e4e4;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+  }
+  
+  
+  
+  .content-container {
+    height: 100%;
+    background-color: rgba(0,0,0,.06);
+  }
+  
+  .main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    overflow-y: auto;
+    overflow-x: hidden;
+    // height: calc(100% - #{$height__main-toolbar});
+    // position: relative;
+  }
+  
+  // @media screen and (max-width: 500px) {
+  //   .main-container {
+  //     width: calc(100%);
+  //     max-width: calc(100%);
+  //   }
+  // }
