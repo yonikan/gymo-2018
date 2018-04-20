@@ -1,50 +1,83 @@
+
+<div class="header-top-container">
+  <div class="header-top">
+
+      <span class="animation-wrapper" *ngIf="isAuth" matTooltip="Monitoring" (click)="null">
+        <i class="material-icons">directions_run</i>
+        <i class="material-icons animation">cached</i>
+      </span>
+
+      <span class="notification-wrapper" *ngIf="isAuth" matTooltip="Notification" >
+        <i class="material-icons" >notifications</i> 
+        <span class="badge">4</span>              
+      </span>
+
+      <span class="notification-wrapper" *ngIf="isAuth" matTooltip="Logout" (click)="onLogout()">
+        <i class="material-icons" >exit_to_app</i> 
+        <span class="label"><a>logout</a></span>              
+     </span>
+
+      <!-- <div class="button" *ngIf="isAuth" mat-button matRipple routerLinkActive="active" routerLink="/login"  (click)="onLogout()">
+        <mat-icon class="icon">exit_to_app</mat-icon>
+        <a>LOGOUT</a>
+      </div> -->
+
+  </div>
+</div>
+
+
 <div class="header-container">
     <div class="header" >
 
-        <div class="logo" routerLinkActive="active" routerLink="/home">
-          <span><img src="./assets/img/logo.png" ></span>
+        <div class="logo">
+          <span><img src="./assets/img/logo.png"></span>
           <h1>GYMO</h1>
         </div>
       
         <div class="navigation">
 
+              <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/home">
+                <i class="material-icons">home</i>
+                <a>Home</a>
+              </button>
+
               <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/training">
-                <i class="material-icons">star</i>
+                <i class="material-icons">directions_run</i>
                 <a>Training</a>
               </button>
 
               <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/exercises">
-                <i class="material-icons">star</i>
+                <i class="material-icons">fitness_center </i>
                 <a>Exercises</a>
               </button>
       
               <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/training/past-exercises">
-                <i class="material-icons">star</i>
+                <i class="material-icons">list</i>
                 <a>Past Exercises</a>
               </button>
 
               <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/dashboard">
-                <i class="material-icons">widgets</i>
+                <i class="material-icons">dashboard</i>
                 <a>Dashboard</a>
               </button>
       
+              <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/profile">
+                <i class="material-icons">perm_identity</i>
+                <a>Profile</a>
+              </button>
+
               <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/settings">
-                <i class="material-icons">widgets</i>
+                <i class="material-icons">settings</i>
                 <a>Settings</a>
               </button>
 
-              <button *ngIf="isAuth" mat-button matRipple routerLinkActive="active" routerLink="/login"  (click)="onLogout()">
-                <mat-icon class="icon">exit_to_app</mat-icon>
-                <a>LOGOUT</a>
-              </button>
-
               <button *ngIf="!isAuth" mat-button routerLinkActive="active" routerLink="/login">
-                <i class="material-icons">star</i>
+                <i class="material-icons">input</i>
                 <a>Login</a>
               </button>
 
               <button *ngIf="!isAuth" mat-button routerLinkActive="active" routerLink="/signup">
-                <i class="material-icons">star</i>
+                <i class="material-icons">assignment_ind                  </i>
                 <a>signup</a>
               </button>
         </div>

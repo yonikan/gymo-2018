@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+import { AuthService } from '../../auth/auth.service';
+
 
 @Component({
   selector: 'app-canvas',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CanvasComponent implements OnInit {
 
-  constructor() { }
+  isAuth = false;
+  authSubscription: Subscription;
 
-  ngOnInit() {
+  constructor(private authService: AuthService) {
+
   }
 
+  ngOnInit() {
+    this.authSubscription = this.authService.authChange.subscribe(authStatus => {
+      this.isAuth = authStatus;
+    });
+  }
 }
