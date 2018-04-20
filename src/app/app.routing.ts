@@ -2,16 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from './auth/auth.guard';
-import { HomeComponent } from './home/home.component';
-import { SettingsComponent } from './settings/settings.component';
+import { HomeComponent } from './core/home/home.component';
+import { SettingsComponent } from './core/settings/settings.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'training', loadChildren: './training/training.module#TrainingModule', canLoad: [AuthGuard] },
+  { path: 'exercises', loadChildren: './exercises/exercises.module#ExercisesModule', canLoad: [AuthGuard] },
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', canLoad: [AuthGuard] },
-  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]  }
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

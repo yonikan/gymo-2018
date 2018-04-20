@@ -1,2 +1,62 @@
 @import '../../../styles/_vars';
 
+
+
+
+// :host {
+//     z-index: 500;
+//     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+//     background-color: #354759;
+//   }
+
+
+  // mat-toolbar {
+  //   width: 1200px;
+  //   margin: 0 auto;
+  //   background-color: #354759;
+  //   color: white;
+  // }
+
+  .header-container {
+    margin-bottom: 30px;
+    z-index: 500;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    width: 100%;
+    height: 65px;
+    background-color: #212d38;
+    color: white;
+
+    .header {
+      width: 1200px;
+      margin: 0 auto;
+      // width: 1200px;
+      // margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+  
+      .logo {
+        
+        img {
+          height: 35px;
+        }
+        
+        h1 {
+          display: inline-block;
+          font-size: 19px;
+          color: white;
+          font-weight: 600;
+      
+          // top: 13px;
+          // position: absolute;
+        }
+      }
+  
+      .navigation {
+  
+      }
+  
+      .actions {
+  
+      }
+    }
+  }

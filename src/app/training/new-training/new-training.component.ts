@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { TrainingService } from '../training.service';
 import { UIService } from '../../shared/ui.service';
-import { Exercise } from '../model/exercise.model';
+import { Exercise } from '../../shared/exercise.model';
 
 
 @Component({

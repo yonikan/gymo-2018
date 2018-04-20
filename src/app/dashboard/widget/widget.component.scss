@@ -3,11 +3,11 @@
 
 mat-card {
     margin: 0 0 20px 0;
-    width: 550px;
-    height: 396px;
+    width: 530px;
+    height: 376px;
   //   min-height: 370px;
     display: inline-block;
-    padding: 0; // rewrite the original mat-card padding to none
+    padding: 0; 
   
     .is-loading {
       top: 100px;

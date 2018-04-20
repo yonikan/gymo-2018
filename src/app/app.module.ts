@@ -13,20 +13,15 @@ import { MaterialModule } from './shared/material.module';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 
-import { AuthService } from './auth/auth.service';
 import { UIService } from './shared/ui.service';
-
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SettingsComponent } from './settings/settings.component';
+import { AuthService } from './auth/auth.service';
 import { TrainingService } from './training/training.service';
+import { AppComponent } from './app.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    SettingsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
