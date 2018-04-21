@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app.routing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CanvasComponent } from './canvas/canvas.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent, HeaderDialog } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 
@@ -17,7 +18,8 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     CommonModule,
     SharedModule,
-    AppRoutingModule // because i want to use <router-outlet> in my core module
+    AppRoutingModule, // because i want to use <router-outlet> in my core module,
+    ReactiveFormsModule
   ],
   declarations: [ 
     CanvasComponent, 
@@ -26,10 +28,14 @@ import { ProfileComponent } from './profile/profile.component';
     ContentComponent,
     HomeComponent,
     SettingsComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeaderDialog
    ],
+   entryComponents: [
+    HeaderDialog
+  ],
   exports : [
      CanvasComponent
-    ],
+  ]
 })
 export class CoreModule { }

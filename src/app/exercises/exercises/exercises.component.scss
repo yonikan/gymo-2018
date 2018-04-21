@@ -1,6 +1,6 @@
 @import '../../../styles/_vars';
 
-$height__chat-header: 135px;
+$height__chat-header: 120px;
 $height__chat-toolbar: 64px;
 $height__chat-container: calc(100% - #{$height__chat-header - $height__chat-toolbar});
 

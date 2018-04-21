@@ -35,7 +35,7 @@ import { AppComponent } from './app.component';
     CoreModule
   ],
   entryComponents: [
-
+    
   ],
   providers: [
     AuthService, 

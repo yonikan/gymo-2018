@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
+  currentPage;
+
   constructor() { }
 
   ngOnInit() {
+    this.currentPage = 1;
   }
 
+  setCurrentPage(value) {
+    this.currentPage = value;
+  }
 }

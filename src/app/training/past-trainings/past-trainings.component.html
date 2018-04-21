@@ -1,83 +1,89 @@
-<!-- <div fxLayoutAlign="center center">
-  <mat-form-field fxFlex="40%">
-    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-</div> -->
+<div class="past-training-container">
+  <mat-card>
+      <mat-card-content>
 
-<mat-table [dataSource]="dataSource" matSort>
+        <mat-table [dataSource]="dataSource" matSort>
+    
+            <ng-container matColumnDef="checkbox">
+              <mat-header-cell *matHeaderCellDef fxFlex="50px"></mat-header-cell>
+              <mat-cell *matCellDef="let element" fxFlex="50px">
+                <mat-checkbox color="primary"></mat-checkbox> 
+              </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="date">
+              <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="160px">Date</mat-header-cell>
+              <mat-cell *matCellDef="let element" fxFlex="160px">{{ element.date | date }}</mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="160px">Name</mat-header-cell>
+              <mat-cell *matCellDef="let element" fxFlex="160px"><mat-icon>directions_run</mat-icon>  {{ element.name }}</mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="level">
+                <mat-header-cell *matHeaderCellDef mat-sort-header >Level</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div class="progressbar-margin">
+                      <mat-progress-bar [mode]="mode" [value]="value" [bufferValue]="bufferValue"></mat-progress-bar>
+                  </div>
+                </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="calories">
+              <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="100px">Calories</mat-header-cell>
+              <mat-cell *matCellDef="let element" fxFlex="100px">{{ element.calories | number }}</mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="duration">
+              <mat-header-cell *matHeaderCellDef mat-sort-header  fxFlex="100px">Duration</mat-header-cell>
+              <mat-cell *matCellDef="let element"  fxFlex="100px">{{ element.duration | number }}</mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="state">
+              <mat-header-cell *matHeaderCellDef mat-sort-header  fxFlex="100px">State</mat-header-cell>
+              <mat-cell *matCellDef="let element"  fxFlex="100px">{{ element.state }}</mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="test">
+              <mat-header-cell *matHeaderCellDef fxFlex="90px"></mat-header-cell>
+              <mat-cell *matCellDef="let element" fxFlex="90px">
+                  <button mat-icon-button class="elipssis">
+                      <mat-icon>open_in_new</mat-icon>
+                  </button>
+                  <button mat-icon-button [matMenuTriggerFor]="menu" class="elipssis">
+                      <mat-icon>more_vert</mat-icon>
+                  </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item>
+                        <mat-icon>dialpad</mat-icon>
+                        <span>Redial</span>
+                      </button>
+                      <button mat-menu-item disabled>
+                        <mat-icon>voicemail</mat-icon>
+                        <span>Check voicemail</span>
+                      </button>
+                      <button mat-menu-item>
+                        <mat-icon>notifications_off</mat-icon>
+                        <span>Disable alerts</span>
+                      </button>
+                    </mat-menu>
+              </mat-cell>
+            </ng-container>
+          
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    
+            <mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="test()"></mat-row>
+          </mat-table>
+          
+        <!-- <mat-paginator [pageSize]="15" [pageSizeOptions]="[1, 5, 10, 20]"> -->
+        <mat-paginator [pageSize]="15"></mat-paginator>
+
+      </mat-card-content>
+  </mat-card>
+</div>
 
 
-  <ng-container matColumnDef="checkbox">
-      <mat-header-cell *matHeaderCellDef fxFlex="50px"></mat-header-cell>
-      <mat-cell *matCellDef="let element" fxFlex="50px">
-        <mat-checkbox color="primary"></mat-checkbox> 
-      </mat-cell>
-    </ng-container>
 
-  <ng-container matColumnDef="date">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="160px">Date</mat-header-cell>
-    <mat-cell *matCellDef="let element" fxFlex="160px">{{ element.date | date }}</mat-cell>
-  </ng-container>
 
-  <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="160px">Name</mat-header-cell>
-    <mat-cell *matCellDef="let element" fxFlex="160px"><mat-icon>directions_run</mat-icon>  {{ element.name }}</mat-cell>
-  </ng-container>
 
-  <ng-container matColumnDef="level">
-      <mat-header-cell *matHeaderCellDef mat-sort-header >Level</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <div class="progressbar-margin">
-            <mat-progress-bar [mode]="mode" [value]="value" [bufferValue]="bufferValue"></mat-progress-bar>
-        </div>
-      </mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="calories">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="100px">Calories</mat-header-cell>
-    <mat-cell *matCellDef="let element" fxFlex="100px">{{ element.calories | number }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="duration">
-    <mat-header-cell *matHeaderCellDef mat-sort-header  fxFlex="100px">Duration</mat-header-cell>
-    <mat-cell *matCellDef="let element"  fxFlex="100px">{{ element.duration | number }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="state">
-    <mat-header-cell *matHeaderCellDef mat-sort-header  fxFlex="100px">State</mat-header-cell>
-    <mat-cell *matCellDef="let element"  fxFlex="100px">{{ element.state }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="test">
-    <mat-header-cell *matHeaderCellDef fxFlex="90px"></mat-header-cell>
-    <mat-cell *matCellDef="let element" fxFlex="90px">
-        <button mat-icon-button class="elipssis">
-            <mat-icon>open_in_new</mat-icon>
-        </button>
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="elipssis">
-            <mat-icon>more_vert</mat-icon>
-        </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>dialpad</mat-icon>
-              <span>Redial</span>
-            </button>
-            <button mat-menu-item disabled>
-              <mat-icon>voicemail</mat-icon>
-              <span>Check voicemail</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>notifications_off</mat-icon>
-              <span>Disable alerts</span>
-            </button>
-          </mat-menu>
-    </mat-cell>
-  </ng-container>
-
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="test()"></mat-row>
-</mat-table>
-
-<!-- <mat-paginator [pageSize]="15" [pageSizeOptions]="[1, 5, 10, 20]"> -->
-<mat-paginator [pageSize]="15">
-</mat-paginator>

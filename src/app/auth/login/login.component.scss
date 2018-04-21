@@ -1,60 +1,26 @@
 @import '../../../styles/_vars';
 
 
-section {
-  height: 100%;
-  
-  &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: url('../../../assets/img/intro.jpg') no-repeat center top;
-      background-size: cover;
-      height: 933px;
-      opacity: .7;
-      content: "";
-      z-index: -2;
-  }
+mat-card {
+  width: 300px;
+}
 
   form {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    margin: 0 auto;
-  }
+    margin-top: 50px;
 
-  mat-form-field {
-    width: 300px;
-  }
-
-  mat-progress-bar {
-    width: 300px;
-  }
-}
-
-
-
-
-  // .background {
-  //   padding: 200px 0;
-  //   position: relative;
-  //   min-height: 900px;
-
-  //   &::before {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     bottom: 0;
-  //     right: 0;
-  //     background: url('../../../assets/img/intro.jpg') no-repeat center top;
-  //     background-size: cover;
-  //     opacity: .7;
-  //     content: "";
-  //     z-index: 0;
-  //   }
-  // }
-
+    mat-form-field {
+      width: 300px;
+      margin-bottom: 25px;
+    }
   
+    mat-progress-bar {
+      width: 300px;
+    }
+  }
+
+  .more-actions {
+    margin-top: 50px;
+  }
   

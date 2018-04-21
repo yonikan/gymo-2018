@@ -2,9 +2,26 @@
 
 .new-training {
     padding: 30px;
+    display: flex;
+    justify-content: center;
 
     mat-card {
       width: 400px;
       margin: 0 auto;
+
+      mat-card-title {
+        display: flex;
+        justify-content: center;
+      }
+
+      mat-card-content {
+        display: flex;
+        justify-content: center;
+      }
+
+      mat-card-actions {
+        display: flex;
+        justify-content: center;
+      }
     }
 }

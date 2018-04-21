@@ -1,8 +1,8 @@
 
-<div class="header-top-container">
+<div class="header-top-container" *ngIf="isAuth">
   <div class="header-top">
 
-      <span class="animation-wrapper" *ngIf="isAuth" matTooltip="Monitoring" (click)="null">
+      <span class="animation-wrapper" *ngIf="isAuth" matTooltip="Monitoring"  (click)="openDialog()">
         <i class="material-icons">directions_run</i>
         <i class="material-icons animation">cached</i>
       </span>
@@ -26,7 +26,7 @@
 </div>
 
 
-<div class="header-container">
+<div class="header-container" *ngIf="isAuth">
     <div class="header" >
 
         <div class="logo">
@@ -41,15 +41,15 @@
                 <a>Home</a>
               </button>
 
-              <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/training">
+              <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/training" >
                 <i class="material-icons">directions_run</i>
                 <a>Training</a>
               </button>
 
-              <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/exercises">
+              <!-- <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/exercises">
                 <i class="material-icons">fitness_center </i>
                 <a>Exercises</a>
-              </button>
+              </button> -->
       
               <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/training/past-exercises">
                 <i class="material-icons">list</i>
@@ -66,10 +66,10 @@
                 <a>Profile</a>
               </button>
 
-              <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/settings">
+              <!-- <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/settings">
                 <i class="material-icons">settings</i>
                 <a>Settings</a>
-              </button>
+              </button> -->
 
               <button *ngIf="!isAuth" mat-button routerLinkActive="active" routerLink="/login">
                 <i class="material-icons">input</i>
@@ -77,10 +77,12 @@
               </button>
 
               <button *ngIf="!isAuth" mat-button routerLinkActive="active" routerLink="/signup">
-                <i class="material-icons">assignment_ind                  </i>
+                <i class="material-icons">assignment_ind</i>
                 <a>signup</a>
               </button>
         </div>
+
+        <div class="actions">test</div>
     </div>
 </div>
 

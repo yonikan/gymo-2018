@@ -2,6 +2,11 @@
 
 
 .dashboard {
-
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 

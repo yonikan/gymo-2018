@@ -65,8 +65,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   openDialog() {
     const dialogRef = this.dialog.open(HeaderDialog, {
-      height: '800px',
-      width: '1300px'
+      height: '600px',
+      width: '1200px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -75,11 +75,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 }
 
-
-
 @Component({
   selector: 'header-dialog',
-  template: `test`
+  templateUrl: 'header-dialog.component.html',
 })
 export class HeaderDialog {
 

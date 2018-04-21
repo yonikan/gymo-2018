@@ -50,7 +50,7 @@
             <div *ngIf="!isListViewMode" [ngSwitch]="widgetType">
                 <div *ngSwitchCase="'doughnutChart'">
                     <canvas baseChart
-                            width="530" height="300"
+                            width="540" height="270"
                             [options]="doughnutChartOptions"
                             [data]="doughnutChartData"
                             [labels]="doughnutChartLabels"
@@ -60,7 +60,7 @@
                 </div>
                 <div *ngSwitchCase="'lineChart'">
                     <canvas baseChart
-                            width="530" height="300"
+                            width="540" height="270"
                             [datasets]="lineChartData"
                             [labels]="lineChartLabels"
                             [options]="lineChartOptions"

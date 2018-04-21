@@ -1,0 +1,63 @@
+@import '../../../styles/_vars';
+
+.logo-header {
+    width: 200px;
+    margin: 10px auto;
+  
+    h1 {
+      font-size: 21px;
+      display: inline-block;
+      color: $black;
+
+    }
+  
+    img {
+      margin-top: 130px;
+      height: 45px;
+    }
+  }
+  
+  mat-card {
+    width: 300px;
+  }
+  
+  section {
+    height: 100%;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: url('../../../assets/img/intro.jpg') no-repeat center top;
+        background-size: cover;
+        // height: 933px;
+        opacity: .7;
+        content: "";
+        z-index: -2;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+  
+      mat-form-field {
+        width: 300px;
+        margin-bottom: 25px;
+      }
+    
+      mat-progress-bar {
+        width: 300px;
+      }
+    }
+  
+    .more-actions {
+      margin-top: 50px;
+    }
+  }
+  

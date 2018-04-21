@@ -3,4 +3,11 @@
 .content {
     // width: 1200px;
     // margin: 0 auto;
+    // background-color: rgba(0, 0, 0 ,.1);
+    // height: 100%;
+
+    router-outlet {
+    //         width: 1200px;
+    // margin: 0 auto;
+    }
 }

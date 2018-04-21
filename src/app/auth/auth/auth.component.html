@@ -1,3 +1,17 @@
-<p>
-  auth works!
-</p>
+<section>
+
+    <div class="logo-header" >
+      <span><img src="./assets/img/logo.png"></span>
+      <h1>GYMO</h1>
+    </div>
+    
+    <mat-card>
+      <mat-card-content>
+        
+        <app-login *ngIf="currentPage === 1"></app-login>
+        <app-signup *ngIf="currentPage === 2"></app-signup>
+        <app-forgot *ngIf="currentPage === 3"></app-forgot>
+
+      </mat-card-content>
+    </mat-card>
+  
