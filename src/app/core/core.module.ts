@@ -12,6 +12,9 @@ import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserMenuComponent } from './header/user-menu/user-menu.component';
+import { UserDialogComponent } from './header/user-dialog/user-dialog.component';
+import { ClickOutsideDirective } from './header/click-outside.directive';
 
 
 @NgModule({
@@ -29,9 +32,12 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     SettingsComponent,
     ProfileComponent,
-    HeaderDialog
-   ],
-   entryComponents: [
+    ClickOutsideDirective,
+    HeaderDialog,
+    UserMenuComponent,
+    UserDialogComponent
+  ],
+  entryComponents: [
     HeaderDialog
   ],
   exports : [

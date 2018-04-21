@@ -12,13 +12,9 @@ export enum widget {
 }
 
 
-
 // CLASSES ========
 export class Widget {
-    constructor(public id: string,
-                public name: string,
-                public type: string,
-                public data: any) {}
+    constructor(id: string, name: string, type: string, data: any) {}
 }
 
 export class Dashboard {
