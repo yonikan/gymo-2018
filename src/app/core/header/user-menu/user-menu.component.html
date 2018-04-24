@@ -1,34 +1,35 @@
 <div class="user-button-container" #userButton (msClickOutside)="onClickOutside()">
 
   <button class="user-button" mat-button (click)="toggleDropdown()" [class.open]="isOpen">
-    <span fxLayout="row" fxLayoutAlign="start center">
+
       <img class="avatar" src="../assets/img/profile-sm.jpg">
-      <span class="name" fxHide fxShow.gt-sm>Jonathan Kangun</span>
-      <mat-icon class="icon" fxHide fxShow.gt-sm>keyboard_arrow_down</mat-icon>
-    </span>
+      <span class="name">Jonathan Kangun</span>
+      <mat-icon class="icon">keyboard_arrow_down</mat-icon>
+
   </button>
 
+  <!-- <div class="dropdown mat-elevation-z1" [class.open]="isOpen"> -->
   <div class="dropdown mat-elevation-z1" [class.open]="isOpen">
     <div class="content">
       <div class="list">
 
-        <div  class="item" fxLayout="row" fxLayoutAlign="start center" matRipple (click)="onClickOutside()" routerLink="/settings">
+        <div class="item" matRipple (click)="onClickOutside()" routerLink="/settings">
           <mat-icon class="icon">settings</mat-icon>
           <span class="title">Settings</span>
         </div>
 
-
-        <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple  (click)="onClickOutside()" routerLink="/profile">
+        <div class="item" matRipple (click)="onClickOutside()" routerLink="/profile">
           <mat-icon class="icon">perm_identity</mat-icon>
           <span class="title">profile</span>
         </div>
 
         <mat-divider></mat-divider>
 
-        <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple (click)="onLogout()">
+        <div class="item" matRipple (click)="onLogout()">
           <mat-icon class="icon">exit_to_app</mat-icon>
           <span class="title">Logout</span>
         </div>
+
       </div>
     </div>
   </div>

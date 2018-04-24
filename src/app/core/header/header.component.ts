@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
 
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 
 @Component({
@@ -14,19 +14,16 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   @Output() sidenavToggle = new EventEmitter<void>();
+  
   isAuth = false;
   authSubscription: Subscription;
 
-  
   // added for the user dropdown
   isOpen: boolean;
   isOpen2: boolean;
-
-
   // animal: string;
   // name: string;
   // recentlyVisited: SidenavItem[] = [ ];
-
 
   constructor(public dialog: MatDialog, private authService: AuthService, private router: Router) { }
 
@@ -47,8 +44,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.authSubscription.unsubscribe();
   }
-
-
 
 
   onClickSetting() {

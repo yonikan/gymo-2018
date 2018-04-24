@@ -1,37 +1,127 @@
 <section class="profile">
   <mat-card>
-    <mat-card-content>
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <mat-form-field>
-            <input
-              type="email"
-              matInput
-              placeholder="Your email"
-              formControlName="email">
-            <mat-hint>Please enter a valid email.</mat-hint>
-            <mat-error>Invalid or missing email.</mat-error>
-          </mat-form-field>
-      
-          <mat-form-field>
-            <input
-              type="password"
-              matInput
-              placeholder="Your password"
-              formControlName="password">
-            <mat-hint>Please enter your password.</mat-hint>
-            <mat-error>Missing password.</mat-error>
-          </mat-form-field>
-      
-          <button *ngIf="true" type="submit" mat-raised-button color="primary" >Submit</button>
-      
-      </form>
-      
-      <div class="more-actions">
-          <div>Do not have an account? <a routerLink="/signup">Sign up</a></div>                                    
-          <div class=""><a routerLink="/forgot">Forgot password?</a></div>
+    <mat-card-title>
+      <span>general  information</span>
+      <i class="material-icons"  *ngIf="false">save</i>
+      <i class="material-icons" *ngIf="false">cancel</i>
+      <i class="material-icons" *ngIf="true">mode_edit</i>
+    </mat-card-title>
+
+    <mat-card-content class="container">
+      <div class="example-content">
+          <div class="example-container">
+            <div class="left">
+                <i class="material-icons">person</i>
+            </div>
+            <div class="right">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="First Name">
+                </mat-form-field>
+            </div>
+          </div>
       </div>
-            
+
+      <div class="example-content">
+          <div class="example-container">
+            <div class="left">
+                <i class="material-icons">wc</i>
+            </div>
+            <div class="right">
+              <mat-form-field>
+                  <mat-select placeholder="Gender">
+                    <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                      {{ gender.viewValue }}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+      </div>
+
+      <div class="example-content">
+          <div class="example-container">
+            <div class="left">
+                <i class="material-icons">event</i>
+            </div>
+            <div class="right">
+              
+              <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Date of birth">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+          </div>
+      </div>
+
+      <div class="example-content">
+          <div class="example-container">
+            <div class="left">
+                <i class="material-icons">location_searching</i>
+            </div>
+            <div class="right">
+              <mat-form-field>
+                  <mat-select placeholder="Country Of OSrigin">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{ food.viewValue }}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+      </div>
+
+      <div class="example-content">
+          <div class="example-container">
+            <div class="left">
+                <i class="material-icons">supervisor_account</i>
+            </div>
+            <div class="right">
+              <mat-form-field>
+                  <mat-select placeholder="Marital Status">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{ food.viewValue }}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+      </div>
+
+      <div class="example-content">
+          <div class="example-container">
+            <div class="left">
+                <i class="material-icons">forum</i>
+            </div>
+            <div class="right">
+                <mat-form-field>
+                    <mat-select placeholder="Language">
+                      <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{ food.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+          </div>
+      </div>
     </mat-card-content>
   </mat-card>
+
+  <mat-card class="profile-img">
+      <mat-card-title>
+          <i class="material-icons"  *ngIf="false">save</i>
+          <i class="material-icons" *ngIf="false">cancel</i>
+          <i class="material-icons" *ngIf="true">mode_edit</i>
+      </mat-card-title>
+      <mat-card-content>
+        
+      </mat-card-content>   
+  </mat-card >
+  <!-- <div class="profile-img">
+      <div class="img-container" >
+          <span><img src="./assets/img/logo.png"></span>
+       </div>
+  </div> -->
+
 </section>
 

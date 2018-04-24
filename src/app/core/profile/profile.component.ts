@@ -7,18 +7,23 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  loginForm: FormGroup;
+
+  foods = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
+  genders = [
+    {value: 'male', viewValue: 'Male'},
+    {value: 'female', viewValue: 'Female'}
+  ];
 
   constructor() { }
 
   ngOnInit() {
 
-    this.loginForm = new FormGroup({
-      email: new FormControl('', {
-        validators: [Validators.required, Validators.email]
-      }),
-      password: new FormControl('', { validators: [Validators.required] })
-    });
+
   }
 
 }

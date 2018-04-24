@@ -15,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserMenuComponent } from './header/user-menu/user-menu.component';
 import { UserDialogComponent } from './header/user-dialog/user-dialog.component';
 import { ClickOutsideDirective } from './header/click-outside.directive';
+import { UserNotificationsComponent } from './header/user-notifications/user-notifications.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ClickOutsideDirective } from './header/click-outside.directive';
     ClickOutsideDirective,
     HeaderDialog,
     UserMenuComponent,
-    UserDialogComponent
+    UserDialogComponent,
+    UserNotificationsComponent
   ],
   entryComponents: [
     HeaderDialog

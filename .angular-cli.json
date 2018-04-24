@@ -19,7 +19,6 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/nvd3/build/nv.d3.css",
         "styles.scss",
         "gymo-theme.scss"
       ],
