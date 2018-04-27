@@ -9,7 +9,7 @@ import { ForgotComponent } from './forgot/forgot.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
-  { path: 'signup', component: AuthComponent },
+  { path: 'signup', component: AuthComponent},
   { path: 'login', component: AuthComponent },
   { path: 'forgot', component: AuthComponent }
 ];

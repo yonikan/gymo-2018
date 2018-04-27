@@ -12,5 +12,19 @@
 
   mat-form-field {
     width: 300px;
+    margin-bottom: 25px;
   }
+
+  mat-checkbox {
+    margin-bottom: 25px;
+  }
+
+  button {
+    margin-bottom: 15px;
+  }
+}
+
+.more-actions {
+  // margin-top: 50px;
+  line-height: 1.8;
 }

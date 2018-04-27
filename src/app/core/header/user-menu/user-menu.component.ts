@@ -9,11 +9,12 @@ import { AuthService } from '../../../auth/auth.service';
 export class UserMenuComponent implements OnInit {
 
   isOpen: boolean;
+  userDetails;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    
+    this.getUserData();
   }
 
   toggleDropdown() {
@@ -26,5 +27,9 @@ export class UserMenuComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  getUserData() {
+    this.userDetails = this.authService.getUserDetails();
   }
 }

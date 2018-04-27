@@ -1,10 +1,30 @@
 <section class="profile">
+
+    <mat-card class="profile-img-container">
+        <!-- <mat-card-title>
+            <i class="material-icons" (click)="toggleEditImg()" *ngIf="isEditImg">cancel</i>
+            <i class="material-icons" (click)="toggleEditImg()" *ngIf="isEditImg">save</i>
+            <i class="material-icons" (click)="toggleEditImg()" *ngIf="!isEditImg">mode_edit</i>
+        </mat-card-title> -->
+        <mat-card-content>
+            <div class="edit-icons">
+                <i class="material-icons" (click)="toggleEditImg()" *ngIf="isEditImg">cancel</i>
+                <i class="material-icons" (click)="toggleEditImg()" *ngIf="isEditImg">save</i>
+                <i class="material-icons" (click)="toggleEditImg()" *ngIf="!isEditImg">mode_edit</i>
+            </div>
+            <div class="profile-img">
+                <span><img src="./assets/img/profile-sm.jpg"></span>
+            </div>
+        </mat-card-content>   
+    </mat-card >
+
+
   <mat-card>
     <mat-card-title>
       <span>general  information</span>
-      <i class="material-icons"  *ngIf="false">save</i>
-      <i class="material-icons" *ngIf="false">cancel</i>
-      <i class="material-icons" *ngIf="true">mode_edit</i>
+      <i class="material-icons" (click)="toggleEditInfo()" *ngIf="isEditInfo">save</i>
+      <i class="material-icons" (click)="toggleEditInfo()" *ngIf="isEditInfo">cancel</i>
+      <i class="material-icons" (click)="toggleEditInfo()" *ngIf="!isEditInfo">mode_edit</i>
     </mat-card-title>
 
     <mat-card-content class="container">
@@ -61,9 +81,9 @@
             </div>
             <div class="right">
               <mat-form-field>
-                  <mat-select placeholder="Country Of OSrigin">
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                      {{ food.viewValue }}
+                  <mat-select placeholder="Country Of Origin">
+                    <mat-option *ngFor="let country of countrys" [value]="country.value">
+                      {{ country.viewValue }}
                     </mat-option>
                   </mat-select>
               </mat-form-field>
@@ -79,8 +99,8 @@
             <div class="right">
               <mat-form-field>
                   <mat-select placeholder="Marital Status">
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                      {{ food.viewValue }}
+                    <mat-option *ngFor="let maritalStatus of maritalStatuses" [value]="maritalStatus.value">
+                      {{ maritalStatus.viewValue }}
                     </mat-option>
                   </mat-select>
               </mat-form-field>
@@ -107,21 +127,6 @@
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="profile-img">
-      <mat-card-title>
-          <i class="material-icons"  *ngIf="false">save</i>
-          <i class="material-icons" *ngIf="false">cancel</i>
-          <i class="material-icons" *ngIf="true">mode_edit</i>
-      </mat-card-title>
-      <mat-card-content>
-        
-      </mat-card-content>   
-  </mat-card >
-  <!-- <div class="profile-img">
-      <div class="img-container" >
-          <span><img src="./assets/img/logo.png"></span>
-       </div>
-  </div> -->
+
 
 </section>
-

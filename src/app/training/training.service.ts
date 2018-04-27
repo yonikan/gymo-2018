@@ -6,7 +6,6 @@ import { Subscription } from 'rxjs';
 import { UIService } from '../shared/ui.service';
 import { Exercise } from '../shared/exercise.model';
 
-
 @Injectable()
 export class TrainingService {
   exerciseChanged = new Subject<Exercise>();

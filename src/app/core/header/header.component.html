@@ -20,22 +20,22 @@
         <span class="label"><a>logout</a></span>              
       </span> -->
 
-      <span class="settings-wrapper" *ngIf="isAuth" matTooltip="Settings" routerLink="/settings">
+      <!-- <span class="settings-wrapper" *ngIf="isAuth" matTooltip="Settings" routerLink="/settings">
           <i class="material-icons">settings</i>             
       </span>
 
       <div class="button" *ngIf="isAuth" mat-button matRipple routerLinkActive="active" routerLink="/login" (click)="onLogout()">
         <mat-icon class="icon">exit_to_app</mat-icon>
-      </div>
+      </div> -->
   </div>
 </div>
 
 <div class="header-container" *ngIf="isAuth">
     <div class="header" >
 
-        <div class="logo">
+        <div class="logo" routerLink="/home">
           <span><img src="./assets/img/logo.png"></span>
-          <h1>GYMO</h1>
+          <h1 >GYMO</h1>
         </div>
       
         <div class="navigation">
@@ -49,10 +49,10 @@
                 <a>Training</a>
               </button>
 
-              <!-- <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/exercises">
+              <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/exercises">
                 <i class="material-icons">directions_run</i>
                 <a>Exercises</a>
-              </button> -->
+              </button>
       
               <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/training/past-exercises">
                 <i class="material-icons">list</i>
@@ -64,17 +64,17 @@
                 <a>Dashboard</a>
               </button>
       
-              <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/profile">
+              <!-- <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/profile">
                 <i class="material-icons">perm_identity</i>
                 <a>Profile</a>
-              </button>
+              </button> -->
 
               <!-- <button *ngIf="isAuth" mat-button routerLinkActive="active" routerLink="/settings">
                 <i class="material-icons">settings</i>
                 <a>Settings</a>
               </button> -->
 
-              <button *ngIf="!isAuth" mat-button routerLinkActive="active" routerLink="/login">
+              <!-- <button *ngIf="!isAuth" mat-button routerLinkActive="active" routerLink="/login">
                 <i class="material-icons">input</i>
                 <a>Login</a>
               </button>
@@ -82,12 +82,22 @@
               <button *ngIf="!isAuth" mat-button routerLinkActive="active" routerLink="/signup">
                 <i class="material-icons">assignment_ind</i>
                 <a>signup</a>
-              </button>
+              </button> -->
         </div>
 
         <div class="actions">
-          <app-user-notifications></app-user-notifications>
+          <!-- <app-user-notifications></app-user-notifications> -->
+          <div class="toolbar-button" fxLayout="row" fxLayoutAlign="start center" (msClickOutside)="onClickOutside2()">
+            <button class="icon-button" type="button" mat-button (click)="toggleDropdown2()" [class.open]="isOpen2">
+              <mat-icon class="icon">notifications_active</mat-icon>
+            </button>
+            <div class="dropdown mat-elevation-z1" [class.open]="isOpen2">
+              <app-user-notifications></app-user-notifications>
+            </div>
+         </div>
+
           <app-user-menu></app-user-menu>
+
         </div>
     </div>
 </div>

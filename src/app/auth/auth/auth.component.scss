@@ -1,29 +1,8 @@
 @import '../../../styles/_vars';
-
-.logo-header {
-    width: 200px;
-    margin: 10px auto;
-  
-    h1 {
-      font-size: 21px;
-      display: inline-block;
-      color: $black;
-
-    }
-  
-    img {
-      margin-top: 130px;
-      height: 45px;
-    }
-  }
-  
-  mat-card {
-    width: 300px;
-  }
   
   section {
     height: 100%;
-    width: 300px;
+    // width: 300px;
     margin: 0 auto;
     text-align: center;
   
@@ -41,23 +20,27 @@
         z-index: -2;
     }
   
-    form {
-      display: flex;
-      flex-direction: column;
-      margin-top: 50px;
+    .logo-header {
+      width: 200px;
+      margin: 10px auto;
+    
+      h1 {
+        font-size: 21px;
+        display: inline-block;
+        color: $black;
   
-      mat-form-field {
-        width: 300px;
-        margin-bottom: 25px;
       }
     
-      mat-progress-bar {
-        width: 300px;
+      img {
+        margin-top: 130px;
+        height: 45px;
       }
     }
-  
-    .more-actions {
-      margin-top: 50px;
+    
+    mat-card {
+      width: 300px;
+      margin: 0 auto;
     }
+
   }
   

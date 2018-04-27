@@ -1,26 +1,33 @@
 @import '../../../styles/_vars';
 
 
-mat-card {
-  width: 300px;
-}
-
   form {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    // margin-top: 50px;
 
     mat-form-field {
       width: 300px;
       margin-bottom: 25px;
     }
   
+    button {
+      margin-bottom: 25px;
+      color: white;
+    }
+
     mat-progress-bar {
       width: 300px;
     }
   }
 
+  button {
+    width: 100%;
+    color: white;
+  }
+
   .more-actions {
     margin-top: 50px;
+    line-height: 1.8;
   }
   

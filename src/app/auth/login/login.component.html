@@ -1,33 +1,32 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input
+      type="email"
+      matInput
+      placeholder="Your email"
+      formControlName="email">
+    <mat-hint>Please enter a valid email.</mat-hint>
+    <mat-error>Invalid or missing email.</mat-error>
+  </mat-form-field>
 
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <mat-form-field>
-            <input
-              type="email"
-              matInput
-              placeholder="Your email"
-              formControlName="email">
-            <mat-hint>Please enter a valid email.</mat-hint>
-            <mat-error>Invalid or missing email.</mat-error>
-          </mat-form-field>
-      
-          <mat-form-field>
-            <input
-              type="password"
-              matInput
-              placeholder="Your password"
-              formControlName="password">
-            <mat-hint>Please enter your password.</mat-hint>
-            <mat-error>Missing password.</mat-error>
-          </mat-form-field>
-      
-          <button *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
-      
-          <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
-      </form>
-      
-      <div class="more-actions">
-          <div>Do not have an account? <a routerLink="/signup">Sign up</a></div>                                    
-          <div class=""><a routerLink="/forgot">Forgot password?</a></div>
-      </div>
-            
+  <mat-form-field>
+    <input
+      type="password"
+      matInput
+      placeholder="Your password"
+      formControlName="password">
+    <mat-hint>Please enter your password.</mat-hint>
+    <mat-error>Missing password.</mat-error>
+  </mat-form-field>
 
+  <button *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+
+  <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+</form>
+
+<button *ngIf="!isLoading" mat-raised-button color="primary" (click)="loginWithGoogle()">Login With Google</button>
+
+<div class="more-actions">
+  <div>Do not have an account? <a (click)="onSelectedPage(2)">Sign up</a></div>       
+  <div ><a (click)="onSelectedPage(3)">Forgot password?</a></div>
+</div>

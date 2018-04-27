@@ -8,15 +8,23 @@ import { MatSnackBar } from '@angular/material';
 import { UIService } from '../shared/ui.service';
 import { AuthData } from './model/auth-data.model';
 
+import { AngularFirestore } from 'angularfire2/firestore';
+import * as firebase from 'firebase/app';
+
 @Injectable()
 export class AuthService {
   authChange = new Subject<boolean>();
   private isAuthenticated = false;
 
+  currentPage: number = 1;
+
+  userDetailsStore;
+
   constructor(
     private router: Router,
     private afAuth: AngularFireAuth,
     // private trainingService: TrainingService,
+    private db: AngularFirestore,
     private uiService: UIService
   ) {}
 
@@ -68,4 +76,48 @@ export class AuthService {
   isAuth() {
     return this.isAuthenticated;
   }
+
+  loginWithGoogle() {
+    return this.afAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider()
+    )
+  }
+
+
+
+  // MINE ==========================
+
+  setUserDetails(userData) {
+    this.userDetailsStore = {
+      displayName: userData.displayName,
+      email: userData.email,
+      photoURL: userData.photoURL
+    };
+  }
+
+  getUserDetails() {
+    return this.userDetailsStore;
+  }
+
+
+  // additionalDetails() {
+
+  // }
+
+  private updateUserData(): void {
+    // const path = `users/${this.currentUserId}`; // Endpoint on firebase
+    // const data = {
+    //   email: this.afAuth.authState.email,
+    //   name: this.afAuth.authState.displayName
+    // };
+
+    // this.db.object(path).update(data)
+    //   .catch(error => console.log(error));
+
+  }
+
+  changeLoginPage(value) {
+    this.currentPage = value;
+  }
+
 }

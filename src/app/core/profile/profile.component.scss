@@ -10,13 +10,15 @@
     mat-card {
         padding: 0;
         width: 100%;
+        min-height: 800px;
         // width: 950px;
 
         mat-card-title {
             border-bottom: solid 1px rgba(0, 0, 0, .1);
             padding-bottom: 10px;
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
+            justify-content: right;
         }
 
         mat-card-content {
@@ -24,16 +26,37 @@
         }
     }
 
-    .profile-img {
+    .profile-img-container {
         width: 290px;
         height: 300px;
-        margin-left: 20px;
-        background-color: #0cc2aa;
+        margin-right: 20px;
+
         
         mat-card-title {
             display: flex;
             flex-direction: row-reverse;
+            justify-content: right;
             color: white;
+        }
+
+        mat-card-content {
+            padding: 0;
+
+            .edit-icons {
+                background-color: #0cc2aa;
+                color: #fff;
+            }
+
+            .profile-img {
+                background-color: #0cc2aa;
+                padding: 10px;
+                margin: 0 auto;
+
+                img {
+                    height: 190px;
+                    border-radius: 100px;
+                }
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-forgot',
@@ -9,7 +9,12 @@ export class ForgotComponent implements OnInit {
 
   constructor() { }
 
+  @Output() selectedPage = new EventEmitter<number>();
+
   ngOnInit() {
   }
 
+  onSelectedPage(page) {
+    this.selectedPage.emit(page); 
+  }
 }

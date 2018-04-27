@@ -8,10 +8,11 @@
     <mat-card>
       <mat-card-content>
         
-        <app-login *ngIf="currentPage === 1"></app-login>
-        <app-signup *ngIf="currentPage === 2"></app-signup>
-        <app-forgot *ngIf="currentPage === 3"></app-forgot>
+        <app-login *ngIf="selectedPage === 1" (selectedPage)="getPage($event)"></app-login>
+        <app-signup *ngIf="selectedPage === 2" (selectedPage)="getPage($event)"></app-signup>
+        <app-forgot *ngIf="selectedPage === 3" (selectedPage)="getPage($event)"></app-forgot>
 
       </mat-card-content>
     </mat-card>
+</section>
   

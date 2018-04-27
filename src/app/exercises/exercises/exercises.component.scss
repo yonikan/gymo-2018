@@ -14,7 +14,7 @@ $height__chat-container: calc(100% - #{$height__chat-header - $height__chat-tool
     min-height: $height__chat-header;
     max-height: $height__chat-header;
     // background-color: greenyellow;
-    background: #fff url('../../../assets/img/backgrounds/4.png') no-repeat center center fixed;
+    background: #fff url('../../../assets/img/intro.jpg') no-repeat center center fixed;
     background-size: cover;
   
     button {
@@ -37,7 +37,7 @@ $height__chat-container: calc(100% - #{$height__chat-header - $height__chat-tool
     .chat {
       background: white;
     //   height: 100%;
-      height: 900px;
+      height: 600px;
     // width: 1200px;
 
       mat-sidenav {

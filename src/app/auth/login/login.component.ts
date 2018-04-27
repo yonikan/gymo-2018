@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
@@ -11,11 +11,14 @@ import { UIService } from '../../shared/ui.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
+
   loginForm: FormGroup;
   isLoading = false;
   private loadingSubs: Subscription;
 
   constructor(private authService: AuthService, private uiService: UIService) {}
+
+  @Output() selectedPage = new EventEmitter<number>();
 
   ngOnInit() {
     this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
@@ -34,6 +37,18 @@ export class LoginComponent implements OnInit, OnDestroy {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
     });
+  }
+
+
+  onSelectedPage(page) {
+    this.selectedPage.emit(page);
+  }
+
+  loginWithGoogle() {
+    this.authService.loginWithGoogle().then((data) => {
+      console.log(data);
+      this.authService.setUserDetails(data.user);
+    })
   }
 
   ngOnDestroy() {

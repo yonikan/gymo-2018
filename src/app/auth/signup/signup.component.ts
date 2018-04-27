@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
@@ -17,6 +17,8 @@ export class SignupComponent implements OnInit, OnDestroy {
 
   constructor(private authService: AuthService, private uiService: UIService) { }
 
+  @Output() selectedPage = new EventEmitter<number>();
+
   ngOnInit() {
     this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
       this.isLoading = isLoading;
@@ -30,6 +32,10 @@ export class SignupComponent implements OnInit, OnDestroy {
       email: form.value.email,
       password: form.value.password
     });
+  }
+
+  onSelectedPage(page) {
+    this.selectedPage.emit(page); 
   }
 
   ngOnDestroy() {
